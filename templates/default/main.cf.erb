@@ -45,19 +45,19 @@ mailbox_size_limit = 0
 recipient_delimiter = +
 
 <% if node['postfix']['maximal_queue_lifetime'] -%>
-maximal_queue_lifetime = node['postfix']['maximal_queue_lifetime']
+maximal_queue_lifetime = <% node['postfix']['maximal_queue_lifetime'] %>
 <% end -%>
 <% if node['postfix']['bounce_queue_lifetime'] -%>
-bounce_queue_lifetime = node['postfix']['bounce_queue_lifetime']
+bounce_queue_lifetime = <% node['postfix']['bounce_queue_lifetime'] %>
 <% end -%>
 <% if node['postfix']['minimal_backoff_time'] -%>
-minimal_backoff_time = node['postfix']['minimal_backoff_time']
+minimal_backoff_time = <% node['postfix']['minimal_backoff_time'] %>
 <% end -%>
 <% if node['postfix']['maximal_backoff_time'] -%>
-maximal_backoff_time = node['postfix']['maximal_backoff_time']
+maximal_backoff_time = <% node['postfix']['maximal_backoff_time'] %>
 <% end -%>
 <% if node['postfix']['queue_run_delay'] -%>
-queue_run_delay = node['postfix']['queue_run_delay']
+queue_run_delay = <% node['postfix']['queue_run_delay'] %>
 <% end -%>
 
 milter_default_action = <%= node['postfix']['milter_default_action'] %>
