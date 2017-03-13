@@ -50,3 +50,10 @@ default['postfix']['canonical_classes'] = nil
 default['postfix']['sender_canonical_maps'] = nil
 default['postfix']['recipient_canonical_maps'] = nil
 default['postfix']['canonical_maps'] = nil
+
+# tunning performance
+default['postfix']['maximal_queue_lifetime'] = nil
+default['postfix']['bounce_queue_lifetime'] = nil
+default['postfix']['minimal_backoff_time'] = nil
+default['postfix']['maximal_backoff_time'] = nil
+default['postfix']['queue_run_delay'] = nil
