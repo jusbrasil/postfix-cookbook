@@ -3,7 +3,7 @@ maintainer        "Opscode, Inc."
 maintainer_email  "cookbooks@opscode.com"
 license           "Apache 2.0"
 description       "Installs and configures postfix for client or outbound relayhost, or to do SASL auth"
-version           "2.1.7"
+version           "2.1.8"
 recipe            "postfix", "Installs and configures postfix"
 recipe            "postfix::sasl_auth", "Set up postfix to auth to a server with sasl"
 recipe            "postfix::aliases", "Manages /etc/aliases"
@@ -108,7 +108,7 @@ attribute "postfix/multi_environment_relay",
   :display_name => "Postfix Search for relayhost in any environment",
   :description => "If true, then the client recipe will search any environment instead of just the node's",
   :default => ""
-  
+
 attribute "postfix/use_procmail",
   :display_name => "Postfix Use procmail?",
   :description => "Whether procmail should be used as the local delivery agent for a server",
