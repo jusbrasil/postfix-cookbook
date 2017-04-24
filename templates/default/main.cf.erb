@@ -98,7 +98,7 @@ canonical_maps = <%= node['postfix']['canonical_maps'] %>
 smtp_fallback_relay = <%= (
   node['postfix']['smtp_fallback_relay']
     .select { |host| host != node['local_address'] && host != node['fqdn'] }
-    .map { |host| "[#{host}]" }
+    .map { |host| "[#{host}]:#{node['postfix']['smtpd_port']}" }
     .join(', ')
 ) %>
 
