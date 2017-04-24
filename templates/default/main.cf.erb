@@ -22,6 +22,15 @@ smtp_sasl_security_options = <%= node['postfix']['smtp_sasl_security_options'] %
 smtp_tls_CAfile = <%= node['postfix']['smtp_tls_cafile'] %>
 <% end -%>
 myhostname = <%= node['postfix']['myhostname'] %>
+
+<% if node['postfix']['smtpd_sasl_auth_enable'] == "yes" -%>
+smtpd_sasl_auth_enable = yes
+smtpd_sasl_security_options = noanonymous
+smtpd_sasl_local_domain = <%= node['postfix']['smtpd_sasl_domain'] %>
+smtpd_recipient_restrictions = <%= node['postfix']['smtpd_recipient_restrictions'] %>
+broken_sasl_auth_clients = yes
+<% end %>
+
 <% if node['postfix']['mydomain'] %>
 mydomain = <%= node['postfix']['mydomain'] %>
 <% end -%>

@@ -36,6 +36,12 @@ default['postfix']['smtp_sasl_user_name'] = ""
 default['postfix']['smtp_sasl_passwd']    = ""
 
 default['postfix']['smtpd_port'] = "smtp"
+default['postfix']['smtpd_sasl_auth_enable'] = "not"
+default['postfix']['smtpd_sasl_domain'] = ""
+default['postfix']['smtpd_sasl_user_name'] = ""
+default['postfix']['smtpd_sasl_passwd']    = ""
+default['postfix']['smtpd_recipient_restrictions'] = "permit_sasl_authenticated, permit_mynetworks, reject_unauth_destination" 
+
 default['postfix']['use_procmail'] = false
 
 default['postfix']['milter_default_action']  = "tempfail"
