@@ -95,6 +95,8 @@ recipient_canonical_maps = <%= node['postfix']['recipient_canonical_maps'] %>
 canonical_maps = <%= node['postfix']['canonical_maps'] %>
 <% end -%>
 
+enable_long_queue_ids = <%= node['postfix']['enable_long_queue_ids'] %>
+
 smtp_fallback_relay = <%= (
   node['postfix']['smtp_fallback_relay']
     .select { |host| host != node['local_address'] && host != node['fqdn'] }

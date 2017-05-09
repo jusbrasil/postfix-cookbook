@@ -58,6 +58,7 @@ default['postfix']['sender_canonical_maps'] = nil
 default['postfix']['recipient_canonical_maps'] = nil
 default['postfix']['canonical_maps'] = nil
 
+default['postfix']['enable_long_queue_ids'] = "no"
 default['postfix']['smtp_fallback_relay'] = []
 
 # tunning performance
